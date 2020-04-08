@@ -29,6 +29,8 @@ public class HardcodedExcersiseProvider implements IExcersiseProvider
 		excersises.add(new PojoExcersise("Leg lifts"));
 		excersises.add(new PojoExcersise("Stomach crunch"));
 		excersises.add(new PojoExcersise("Dips"));
+		excersises.add(new PojoExcersise("Burpies"));
+		excersises.add(new PojoExcersise("Leg bend and lift"));
 	}
 	
 	@Override
