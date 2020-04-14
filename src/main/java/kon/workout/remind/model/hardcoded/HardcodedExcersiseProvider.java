@@ -22,15 +22,16 @@ public class HardcodedExcersiseProvider implements IExcersiseProvider
 	public HardcodedExcersiseProvider()
 	{
 		excersises = new ArrayList<>();
-		excersises.add(new PojoExcersise("Squeeze"));
-		excersises.add(new PojoExcersise("Push-up"));
-		excersises.add(new PojoExcersise("Sit-up"));
-		excersises.add(new PojoExcersise("Jumping jack"));
+		excersises.add(new PojoExcersise("Squeezes"));
+		excersises.add(new PojoExcersise("Push-ups"));
+		excersises.add(new PojoExcersise("Sit-ups"));
+		excersises.add(new PojoExcersise("Jumping jacks"));
 		excersises.add(new PojoExcersise("Leg lifts"));
-		excersises.add(new PojoExcersise("Stomach crunch"));
+		excersises.add(new PojoExcersise("Stomach crunches"));
 		excersises.add(new PojoExcersise("Dips"));
 		excersises.add(new PojoExcersise("Burpies"));
-		excersises.add(new PojoExcersise("Leg bend and lift"));
+		excersises.add(new PojoExcersise("Ab blasters"));
+		excersises.add(new PojoExcersise("Side leg lifts"));
 	}
 	
 	@Override

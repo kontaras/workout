@@ -1,38 +1,36 @@
-package kon.workout.remind;
+
+package kon.workout.remind.view.cli;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.time.ZonedDateTime;
-import java.time.temporal.ChronoUnit;
-import java.time.temporal.TemporalAmount;
-import java.util.concurrent.ScheduledThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
-
+import kon.workout.remind.controller.TimingController;
 import kon.workout.remind.model.interfaces.IExcersiseProvider;
 
 /**
- *
  * @author Konstantin Naryshkin
  */
-public class StdOutAlert implements Runnable
+public class StdOutUi implements Runnable
 {
-	private ScheduledThreadPoolExecutor executor;
-	private TemporalAmount period;
 	private BufferedReader in;
+	
 	private IExcersiseProvider exersiseProvider;
+	
+	private TimingController timing;
+	
 	/**
 	 * TODO
-	 * @param excersiseProvider 
+	 * 
+	 * @param excersiseProvider
+	 * @param timing
 	 */
-	public StdOutAlert(IExcersiseProvider excersiseProvider, ScheduledThreadPoolExecutor executor, TemporalAmount period)
+	public StdOutUi(IExcersiseProvider excersiseProvider, TimingController timing)
 	{
-		this.executor = executor;
-		this.period = period;
-		
 		this.exersiseProvider = excersiseProvider;
 		
 		this.in = new BufferedReader(new InputStreamReader(System.in));
+		
+		this.timing = timing;
 		scheduleNext();
 	}
 	
@@ -56,15 +54,15 @@ public class StdOutAlert implements Runnable
 		
 		scheduleNext();
 	}
-
+	
 	/**
 	 * Schedule the next workout
 	 */
 	private void scheduleNext()
 	{
-		System.out.println("Next workout at " + ZonedDateTime.now().plus(period));
+		this.timing.scheduleNext(this);
+		System.out.println("Next workout at " + this.timing.getNextRun());
 		System.out.flush();
-		this.executor.schedule(this, this.period.get(ChronoUnit.SECONDS), TimeUnit.SECONDS);
 	}
 	
 }
