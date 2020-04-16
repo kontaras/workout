@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import javax.inject.Inject;
+
 import kon.workout.remind.model.interfaces.IExcersise;
 import kon.workout.remind.model.interfaces.IExcersiseProvider;
 
@@ -19,6 +21,7 @@ public class HardcodedExcersiseProvider implements IExcersiseProvider
 	/**
 	 * 
 	 */
+	@Inject
 	public HardcodedExcersiseProvider()
 	{
 		excersises = new ArrayList<>();

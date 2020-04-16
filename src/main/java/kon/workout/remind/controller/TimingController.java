@@ -17,7 +17,7 @@ public class TimingController
 	
 	private TemporalAmount frequency;
 	
-	private ZonedDateTime nextRun;
+	private ZonedDateTime nextRun = null;
 	
 	private ScheduledFuture<?> nextRunResult = null;
 	
@@ -53,5 +53,13 @@ public class TimingController
 	public ZonedDateTime getNextRun()
 	{
 		return nextRun;
+	}
+	
+	synchronized public void close() {
+		if (this.nextRunResult != null) {
+			this.nextRunResult.cancel(true);
+		}
+		
+		executor.shutdownNow();
 	}
 }
