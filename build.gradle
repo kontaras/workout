@@ -32,7 +32,7 @@ dependencies {
     // Use JUnit Jupiter Engine for testing.
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.1'
     
-    implementation group: 'com.google.inject', name: 'guice', version: '5.0.0'
+    implementation group: 'com.google.inject', name: 'guice', version: '5.0.1'
 }
 
 application {
