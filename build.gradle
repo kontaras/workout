@@ -27,10 +27,10 @@ dependencies {
     //implementation 'com.google.guava:guava:28.2-jre'
 
     // Use JUnit Jupiter API for testing.
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.13.2'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.13.4'
 
     // Use JUnit Jupiter Engine for testing.
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.13.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.13.4'
     
     implementation group: 'com.google.inject', name: 'guice', version: '5.1.0'
 }
